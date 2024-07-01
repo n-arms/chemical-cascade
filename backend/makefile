@@ -1,5 +1,5 @@
 build:
-	cd target && g++ -c ../src/*.cpp && g++ *.o -o main
+	cd target && g++ -std=c++17 -c ../src/*.cpp && g++ -std=c++17 *.o -o main
 
 run: build
 	./target/main
