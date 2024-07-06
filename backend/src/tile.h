@@ -1,11 +1,15 @@
 #ifndef tile_h
 #define tile_h
 
-#include "object.h"
-#include "ref.h"
+#include "ecs/entity.h"
 
 struct tile {
-  object_ref object;
+  entity object;
+};
+
+struct tile_ref {
+  int x;
+  int y;
 };
 
 enum direction {

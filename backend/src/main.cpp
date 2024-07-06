@@ -1,19 +1,13 @@
 #include <iostream>
 #include "tile.h"
-#include "object.h"
-#include "ref.h"
-#include "object/belt.h"
-#include "object/goal.h"
-#include "object/source.h"
-#include "molecule.h"
 #include "tile_grid.h"
 #include "world.h"
-#include "entity.h"
-#include "entity_list.h"
-#include "component.h"
-#include "component_list.h"
-#include "all.h"
-#include "system.h"
+#include "ecs/entity.h"
+#include "ecs/entity_list.h"
+#include "ecs/component.h"
+#include "ecs/component_list.h"
+#include "ecs/all.h"
+#include "ecs/system.h"
 
 struct position {};
 struct velocity {};

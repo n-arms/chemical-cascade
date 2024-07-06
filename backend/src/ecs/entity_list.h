@@ -34,6 +34,7 @@ struct entity_list {
   template<class T>
   void remove(int ref) {
     get_component_list<T>() -> delete_component(ref);
+    entities[ref].components.reset();
   }
 
   template<class T>

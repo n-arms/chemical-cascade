@@ -11,7 +11,7 @@ struct chunk {
 
   chunk() {
     for (int i = 0; i < 256; ++i) {
-      tiles[i] = {};
+      tiles[i] = std::nullopt;
     }
   }
 
@@ -91,6 +91,5 @@ struct tile_grid {
     chunk.insert_tile(ref, tile);
   }
 };
-
 
 #endif
