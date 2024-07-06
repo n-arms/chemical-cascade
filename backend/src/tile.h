@@ -6,7 +6,6 @@
 
 struct tile {
   object_ref object;
-  object_type type;
 };
 
 enum direction {

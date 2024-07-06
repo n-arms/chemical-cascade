@@ -5,16 +5,20 @@
 #include "tile.h"
 #include "ref.h"
 
-struct object_ref {
-  int id;
-};
+struct world;
 
 enum object_type {
   belt_object, source_object, goal_object
 };
 
+struct object_ref {
+  int id;
+  object_type type;
+};
+
 struct object {
   void iterate(const std::function<void(tile_ref)> &perElement) {}
+  void tick(double dt, world &w);
 };
 
 struct tile_object: object {

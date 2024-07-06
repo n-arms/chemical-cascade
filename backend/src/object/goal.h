@@ -1,5 +1,5 @@
-#ifndef belt_h
-#define belt_h
+#ifndef goal_h
+#define goal_h
 
 #include "../tile.h"
 #include "../object.h"
