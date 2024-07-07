@@ -13,6 +13,12 @@ struct vec {
     return copy;
   }
 
+  vec<N> operator-(const vec<N> &other) {
+    vec<N> copy = *this;
+    copy -= other;
+    return copy;
+  }
+
   vec<N> operator*(float scalar) {
     vec<N> copy = *this;
     copy *= scalar;
@@ -21,14 +27,36 @@ struct vec {
 
   void operator+=(const vec<N> &other) {
     for (int i = 0; i < elements.size(); ++i) {
-      elements[i] = this[i] + other[i];
+      elements[i] += other[i];
+    }
+  }
+
+  void operator-=(const vec<N> &other) {
+    for (int i = 0; i < elements.size(); ++i) {
+      elements[i] -= other[i];
     }
   }
 
   void operator*=(float scalar) {
     for (int i = 0; i < elements.size(); ++i) {
-      elements[i] = this[i] * scalar;
+      elements[i] *= scalar;
     }
+  }
+
+  float operator[](int n) {
+    return elements[n];
+  }
+
+  float sq_mag() {
+    float total = 0;
+    for (const auto &elem : elements) {
+      total += elem * elem;
+    }
+    return total;
+  }
+
+  float mag() {
+    return sqrt(sq_mag());
   }
 };
 
